@@ -18,6 +18,10 @@
     "repositories": [
         {
             "type": "git",
+            "url": "https://github.com/t4web/base.git"
+        },
+        {
+            "type": "git",
             "url": "https://github.com/t4web/employees.git"
         },
         {
@@ -28,6 +32,7 @@
     "require": {
         "php": ">=5.4.0",
         "zendframework/zendframework": "2.3.*",
+        "t4web/base": "dev-master",
         "t4web/employees": "dev-master",
         "t4web/navigation": "dev-master"
     },
