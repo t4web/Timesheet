@@ -2,17 +2,22 @@
 
 namespace Timesheet\Controller\User;
 
+use DateTime;
 use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
+use Timesheet\Controller\ViewModel\WorkDaysViewModel;
 
 class WorkDaysController extends AbstractActionController {
 
     /**
-     * @return ViewModel
+     * @return WorkDaysViewModel
      */
     public function defaultAction()
     {
-        return new ViewModel();
+        $current = $this->params('month', date('Y-m'));
+
+        $view = new WorkDaysViewModel();
+        $view->setCurrent(DateTime::createFromFormat('Y-m', $current));
+        return $view;
     }
 
 }

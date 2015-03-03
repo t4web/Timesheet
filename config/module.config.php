@@ -13,9 +13,9 @@ return array(
     'router' => array(
         'routes' => array(
             'timesheet-work-days' => array(
-                'type' => 'Literal',
+                'type' => 'Segment',
                 'options' => array(
-                    'route'    => '/timesheet',
+                    'route'    => '/timesheet[/:month]',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Timesheet\Controller\User',
                         'controller'    => 'WorkDays',
@@ -23,6 +23,12 @@ return array(
                     ),
                 ),
             ),
+        ),
+    ),
+
+    'view_helpers' => array(
+        'invokables' => array(
+            'monthPaginator' => 'Timesheet\View\Helper\MonthPaginator',
         ),
     ),
 

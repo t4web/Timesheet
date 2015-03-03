@@ -1,0 +1,14 @@
+<?php $viewModel = $this->viewModel()->getCurrent(); ?>
+
+<ul class="pagination">
+    <li><a href="#">«</a></li>
+    <?php for ($i=0; $i<5; $i++): ?>
+        <?php $next = $viewModel->getNext(); ?>
+        <?php if ($viewModel->isCurrent()): ?>
+            <li class="active"><a href="<?= $this->url('timesheet-work-days', ['month' => $next->format('Y-m')]); ?>"><?= $next->format('Y M'); ?><span class="sr-only">(current)</span></a></li>
+        <?php else: ?>
+            <li><a href="<?= $this->url('timesheet-work-days', ['month' => $next->format('Y-m')]); ?>"><?= $next->format('Y M'); ?></a></li>
+        <?php endif; ?>
+    <?php endfor; ?>
+    <li><a href="#">»</a></li>
+</ul>
