@@ -34,10 +34,10 @@
                     <tr>
                         <td>Mark Поликарпов</td>
                         <?php for($i=1; $i<($viewModel->getCurrent()->format('t') + 1); $i++): ?>
-                            <?php if (in_array($i, $viewModel->getDaysOff())): ?>
+                        <?php if (array_key_exists($i, $viewModel->getHollidays($viewModel->getCurrent()->format('n')))): ?>
+                        <td class="active text-center"><i class="fa fa-star-o"></i></td>
+                            <?php elseif (in_array($i, $viewModel->getDaysOff())): ?>
                                 <td class="active text-center">&nbsp;</td>
-                            <?php elseif (in_array($i, [9])): ?>
-                                <td class="active text-center"><i class="fa fa-star-o"></i></td>
                             <?php else: ?>
                                 <td>&nbsp;</td>
                             <?php endif; ?>
@@ -46,7 +46,9 @@
                     <tr>
                         <td>Jacob Гултурян</td>
                         <?php for($i=1; $i<($viewModel->getCurrent()->format('t') + 1); $i++): ?>
-                            <?php if (in_array($i, [3, 5, 12, 16])): ?>
+                            <?php if (array_key_exists($i, $viewModel->getHollidays($viewModel->getCurrent()->format('n')))): ?>
+                                <td class="active text-center"><i class="fa fa-star-o"></i></td>
+                            <?php elseif (in_array($i, [3, 5, 12, 16])): ?>
                                 <td class="warning text-center">Б</td>
                             <?php elseif (in_array($i, [4, 10, 21])): ?>
                                 <td class="danger text-center">П</td>
@@ -56,8 +58,6 @@
                                 <td class="success text-center">У</td>
                             <?php elseif (in_array($i, $viewModel->getDaysOff())): ?>
                                 <td class="active text-center">&nbsp;</td>
-                            <?php elseif (in_array($i, [9])): ?>
-                                <td class="active text-center"><i class="fa fa-star-o"></i></td>
                             <?php else: ?>
                                 <td>&nbsp;</td>
                             <?php endif; ?>
@@ -66,10 +66,11 @@
                     <tr>
                         <td>Larry Москаленко</td>
                         <?php for($i=1; $i<($viewModel->getCurrent()->format('t') + 1); $i++): ?>
-                            <?php if (in_array($i, $viewModel->getDaysOff())): ?>
+                        <?php if (array_key_exists($i, $viewModel->getHollidays($viewModel->getCurrent()->format('n')))): ?>
+                        <td class="active text-center"><i class="fa fa-star-o"></i></td>
+                            <?php elseif (in_array($i, $viewModel->getDaysOff())): ?>
                                 <td class="active text-center">&nbsp;</td>
-                            <?php elseif (in_array($i, [9])): ?>
-                                <td class="active text-center"><i class="fa fa-star-o"></i></td>
+
                             <?php else: ?>
                                 <td>&nbsp;</td>
                             <?php endif; ?>
@@ -78,10 +79,11 @@
                     <tr>
                         <td>John Кирилов</td>
                         <?php for($i=1; $i<($viewModel->getCurrent()->format('t') + 1); $i++): ?>
-                            <?php if (in_array($i, $viewModel->getDaysOff())): ?>
+                        <?php if (array_key_exists($i, $viewModel->getHollidays($viewModel->getCurrent()->format('n')))): ?>
+                        <td class="active text-center"><i class="fa fa-star-o"></i></td>
+                            <?php elseif (in_array($i, $viewModel->getDaysOff())): ?>
                                 <td class="active text-center">&nbsp;</td>
-                            <?php elseif (in_array($i, [9])): ?>
-                                <td class="active text-center"><i class="fa fa-star-o"></i></td>
+
                             <?php else: ?>
                                 <td>&nbsp;</td>
                             <?php endif; ?>
