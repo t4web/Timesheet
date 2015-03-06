@@ -20,8 +20,7 @@ class HolliDaysService extends AbstractActionController
             '9' => 'Рождество',
         ];
         $hollidays[2] = [];
-        $hollidays[3] = ['9' => '8 марта',
-        ];
+        $hollidays[3] = ['9' => '8 марта',];
 
         $hollidays[4] = ['13' => 'пасха'];
 
