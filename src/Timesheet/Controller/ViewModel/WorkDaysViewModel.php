@@ -4,6 +4,7 @@ namespace Timesheet\Controller\ViewModel;
 use DateTime;
 use DateInterval;
 use DatePeriod;
+use Timesheet\Service\HolliDaysService;
 use Zend\View\Model\ViewModel;
 
 class WorkDaysViewModel extends ViewModel {
@@ -57,8 +58,21 @@ class WorkDaysViewModel extends ViewModel {
                 $this->daysOff[] = $period->format('j');
             }
         }
-
         return $this->daysOff;
+    }
+
+
+    public function getHollidays($month){
+
+        if (empty($month) || !is_numeric($month) || is_array($month) || $month > 12 || $month < 1) return array();
+
+        $holliday = new HolliDaysService();
+
+        $return = $holliday->getHolliDays($month);
+
+        if (!is_array($return)) return array();
+
+        return $return;
     }
 
 }
