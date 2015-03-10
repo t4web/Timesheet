@@ -9,6 +9,9 @@ use Zend\View\Model\ViewModel;
 
 class WorkDaysViewModel extends ViewModel {
 
+    private $_Weekend = 1;
+
+    private $_Holliday = 2;
     /**
      * @var DateTime
      */
@@ -82,13 +85,12 @@ class WorkDaysViewModel extends ViewModel {
 
         $dayOff = $this->getDaysOff();
         $hollidays = $this->getHollidays($month);
-        $allWekends = array_unique(array_merge($dayOff, $hollidays));
 
         if (in_array($day, $dayOff)) {
-            return 2;
+            return $this->_Holliday;
         }
         if (in_array($day, $hollidays)) {
-            return 1;
+            return $this->_Weekend;
         }
 
         return false;

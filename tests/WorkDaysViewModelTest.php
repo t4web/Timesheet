@@ -50,14 +50,31 @@ class WorkDaysViewModelTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     * @dataProvider GetWeekendProviderDayFalse
+     * @dataProvider GetWeekendProviderFalse
      */
 
     public function testViewGetWeekendDayFalse($day)
     {
-        $this->assertFalse($this->controller->getWeekend(5, $day));
+        for ($month=1;$month<=12;$month++) {
+
+            $this->assertFalse($this->controller->getWeekend($month, $day));
+
+        }
     }
 
+    /**
+     * @dataProvider GetWeekendProviderFalse
+     */
+
+    public function testViewGetWeekendMonthFalse($month)
+    {
+        for ($day=1;$day<=31;$day++) {
+
+            $this->assertFalse($this->controller->getWeekend($month, $day));
+
+        }
+
+    }
 
 
     public function trueProvider()
@@ -139,7 +156,7 @@ class WorkDaysViewModelTest extends \PHPUnit_Framework_TestCase {
         );
     }
 
-    public function GetWeekendProviderDayFalse()
+    public function GetWeekendProviderFalse()
     {
         return array(
             array(''),

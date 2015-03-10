@@ -13,25 +13,15 @@ class HolliDaysService extends AbstractActionController
         if (empty($month) || !is_numeric($month) || is_array($month) || $month > 12 || $month < 1) return array();
 
 
-        $hollidays[1] = [1,
-            2,
-            7,
-            8,
-            9,
-        ];
+        $hollidays[1] = [1, 2, 7, 8, 9];
         $hollidays[2] = [];
         $hollidays[3] = [9];
 
         $hollidays[4] = [13];
 
-        $hollidays[5] = [1, 4,
-            11,
-        ];
+        $hollidays[5] = [1, 4, 11];
 
-
-        $hollidays[6] = [1,
-            29,
-        ];
+        $hollidays[6] = [1, 29];
 
         $hollidays[7] = [];
 
