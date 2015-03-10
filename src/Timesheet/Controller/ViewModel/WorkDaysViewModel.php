@@ -75,4 +75,25 @@ class WorkDaysViewModel extends ViewModel {
         return $return;
     }
 
+    public function getWeekend($month, $day)
+    {
+        if (empty($month) || !is_numeric($month) || is_array($month) || $month > 12 || $month < 1) return false;
+        if (empty($day) || !is_numeric($day) || is_array($day) || $day > 31 || $day < 1) return false;
+
+        $dayOff = $this->getDaysOff();
+        $hollidays = $this->getHollidays($month);
+        $allWekends = array_unique(array_merge($dayOff, $hollidays));
+
+        if (in_array($day, $dayOff)) {
+            return 2;
+        }
+        if (in_array($day, $hollidays)) {
+            return 1;
+        }
+
+        return false;
+
+    }
+
+
 }

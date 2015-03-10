@@ -34,11 +34,11 @@
                     <tr>
                         <td>Mark Поликарпов</td>
                         <?php for($i=1; $i<($viewModel->getCurrent()->format('t') + 1); $i++): ?>
-                        <?php if (array_key_exists($i, $viewModel->getHollidays($viewModel->getCurrent()->format('n')))): ?>
-                        <td class="active text-center"><i class="fa fa-star-o"></i></td>
-                            <?php elseif (in_array($i, $viewModel->getDaysOff())): ?>
+                            <?php if ($viewModel->getWeekend($viewModel->getCurrent()->format('n'), $i) == 1): ?>
+                                <td class="active text-center"><i class="fa fa-star-o"></i></td>
+                            <?php elseif ($viewModel->getWeekend($viewModel->getCurrent()->format('n'), $i) == 2): ?>
                                 <td class="active text-center">&nbsp;</td>
-                            <?php else: ?>
+                            <?php elseif (!$viewModel->getWeekend($viewModel->getCurrent()->format('n'), $i)): ?>
                                 <td>&nbsp;</td>
                             <?php endif; ?>
                         <?php endfor; ?>
@@ -46,19 +46,11 @@
                     <tr>
                         <td>Jacob Гултурян</td>
                         <?php for($i=1; $i<($viewModel->getCurrent()->format('t') + 1); $i++): ?>
-                            <?php if (array_key_exists($i, $viewModel->getHollidays($viewModel->getCurrent()->format('n')))): ?>
+                            <?php if ($viewModel->getWeekend($viewModel->getCurrent()->format('n'), $i) == 1): ?>
                                 <td class="active text-center"><i class="fa fa-star-o"></i></td>
-                            <?php elseif (in_array($i, [3, 5, 12, 16])): ?>
-                                <td class="warning text-center">Б</td>
-                            <?php elseif (in_array($i, [4, 10, 21])): ?>
-                                <td class="danger text-center">П</td>
-                            <?php elseif (in_array($i, [6, 13, 26])): ?>
-                                <td class="info text-center">О</td>
-                            <?php elseif (in_array($i, [2, 15, 27])): ?>
-                                <td class="success text-center">У</td>
-                            <?php elseif (in_array($i, $viewModel->getDaysOff())): ?>
+                            <?php elseif ($viewModel->getWeekend($viewModel->getCurrent()->format('n'), $i) == 2): ?>
                                 <td class="active text-center">&nbsp;</td>
-                            <?php else: ?>
+                            <?php elseif (!$viewModel->getWeekend($viewModel->getCurrent()->format('n'), $i)): ?>
                                 <td>&nbsp;</td>
                             <?php endif; ?>
                         <?php endfor; ?>
@@ -66,12 +58,11 @@
                     <tr>
                         <td>Larry Москаленко</td>
                         <?php for($i=1; $i<($viewModel->getCurrent()->format('t') + 1); $i++): ?>
-                        <?php if (array_key_exists($i, $viewModel->getHollidays($viewModel->getCurrent()->format('n')))): ?>
-                        <td class="active text-center"><i class="fa fa-star-o"></i></td>
-                            <?php elseif (in_array($i, $viewModel->getDaysOff())): ?>
+                            <?php if ($viewModel->getWeekend($viewModel->getCurrent()->format('n'), $i) == 1): ?>
+                                <td class="active text-center"><i class="fa fa-star-o"></i></td>
+                            <?php elseif ($viewModel->getWeekend($viewModel->getCurrent()->format('n'), $i) == 2): ?>
                                 <td class="active text-center">&nbsp;</td>
-
-                            <?php else: ?>
+                            <?php elseif (!$viewModel->getWeekend($viewModel->getCurrent()->format('n'), $i)): ?>
                                 <td>&nbsp;</td>
                             <?php endif; ?>
                         <?php endfor; ?>
@@ -79,12 +70,11 @@
                     <tr>
                         <td>John Кирилов</td>
                         <?php for($i=1; $i<($viewModel->getCurrent()->format('t') + 1); $i++): ?>
-                        <?php if (array_key_exists($i, $viewModel->getHollidays($viewModel->getCurrent()->format('n')))): ?>
-                        <td class="active text-center"><i class="fa fa-star-o"></i></td>
-                            <?php elseif (in_array($i, $viewModel->getDaysOff())): ?>
+                            <?php if ($viewModel->getWeekend($viewModel->getCurrent()->format('n'), $i) == 1): ?>
+                                <td class="active text-center"><i class="fa fa-star-o"></i></td>
+                            <?php elseif ($viewModel->getWeekend($viewModel->getCurrent()->format('n'), $i) == 2): ?>
                                 <td class="active text-center">&nbsp;</td>
-
-                            <?php else: ?>
+                            <?php elseif (!$viewModel->getWeekend($viewModel->getCurrent()->format('n'), $i)): ?>
                                 <td>&nbsp;</td>
                             <?php endif; ?>
                         <?php endfor; ?>

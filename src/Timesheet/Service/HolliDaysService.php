@@ -13,30 +13,29 @@ class HolliDaysService extends AbstractActionController
         if (empty($month) || !is_numeric($month) || is_array($month) || $month > 12 || $month < 1) return array();
 
 
-        $hollidays[1] = ['1' => 'Новый год',
-            '2' => 'Новый год',
-            '7' => 'Рождество',
-            '8' => 'Рождество',
-            '9' => 'Рождество',
+        $hollidays[1] = [1,
+            2,
+            7,
+            8,
+            9,
         ];
         $hollidays[2] = [];
-        $hollidays[3] = ['9' => '8 марта',];
+        $hollidays[3] = [9];
 
-        $hollidays[4] = ['13' => 'пасха'];
+        $hollidays[4] = [13];
 
-        $hollidays[5] = ['1' => 'День труда',
-            '4' => 'День труда',
-            '11' => 'День победы',
+        $hollidays[5] = [1, 4,
+            11,
         ];
 
 
-        $hollidays[6] = ['1' => 'Троица',
-            '29' => 'День Конституции',
+        $hollidays[6] = [1,
+            29,
         ];
 
         $hollidays[7] = [];
 
-        $hollidays[8] = ['24' => 'День независимости'];
+        $hollidays[8] = [24];
 
         $hollidays[9] = [];
         $hollidays[10] = [];
