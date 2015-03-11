@@ -4,14 +4,11 @@ namespace Timesheet\Controller\ViewModel;
 use DateTime;
 use DateInterval;
 use DatePeriod;
-use Timesheet\Service\HolliDaysService;
+use Timesheet\Service\CalendarService;
 use Zend\View\Model\ViewModel;
 
 class WorkDaysViewModel extends ViewModel {
 
-    private $_Weekend = 1;
-
-    private $_Holliday = 2;
     /**
      * @var DateTime
      */
@@ -65,36 +62,11 @@ class WorkDaysViewModel extends ViewModel {
     }
 
 
-    public function getHollidays($month){
-
-        if (empty($month) || !is_numeric($month) || is_array($month) || $month > 12 || $month < 1) return array();
-
-        $holliday = new HolliDaysService();
-
-        $return = $holliday->getHolliDays($month);
-
-        if (!is_array($return)) return array();
-
-        return $return;
-    }
-
-    public function getWeekend($month, $day)
+    public function getCalendar($userId, $month, $day)
     {
-        if (empty($month) || !is_numeric($month) || is_array($month) || $month > 12 || $month < 1) return false;
-        if (empty($day) || !is_numeric($day) || is_array($day) || $day > 31 || $day < 1) return false;
+        $calendar = new CalendarService();
 
-        $dayOff = $this->getDaysOff();
-        $hollidays = $this->getHollidays($month);
-
-        if (in_array($day, $dayOff)) {
-            return $this->_Holliday;
-        }
-        if (in_array($day, $hollidays)) {
-            return $this->_Weekend;
-        }
-
-        return false;
-
+        return $calendar->getCalendar($userId, $this->getDaysOff(), $month, $day);
     }
 
 
