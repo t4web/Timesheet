@@ -27,7 +27,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Timesheet": "src/"
+            "T4webTimesheet": "src/"
         },
         "classmap": [
             "./Module.php"

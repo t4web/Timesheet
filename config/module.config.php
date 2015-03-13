@@ -17,7 +17,7 @@ return array(
                 'options' => array(
                     'route'    => '/timesheet[/:month]',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'Timesheet\Controller\User',
+                        '__NAMESPACE__' => 'T4webTimesheet\Controller\User',
                         'controller'    => 'WorkDays',
                         'action'        => 'default',
                     ),
@@ -28,7 +28,7 @@ return array(
 
     'view_helpers' => array(
         'invokables' => array(
-            'monthPaginator' => 'Timesheet\View\Helper\MonthPaginator',
+            'monthPaginator' => 'T4webTimesheet\View\Helper\MonthPaginator',
         ),
     ),
 

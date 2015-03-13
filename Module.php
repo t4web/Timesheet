@@ -1,5 +1,5 @@
 <?php
-namespace Timesheet;
+namespace T4webTimesheet;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
@@ -10,7 +10,7 @@ use Zend\ModuleManager\Feature\BootstrapListenerInterface;
 use Zend\Mvc\Controller\ControllerManager;
 use Zend\EventManager\EventInterface;
 use Zend\Console\Adapter\AdapterInterface as ConsoleAdapterInterface;
-use Timesheet\Controller\User\WorkDaysController;
+use T4webTimesheet\Controller\User\WorkDaysController;
 
 class Module implements AutoloaderProviderInterface, ConfigProviderInterface,
                         ControllerProviderInterface, ConsoleUsageProviderInterface,
@@ -54,7 +54,7 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface,
     {
         return array(
             'factories' => array(
-                'Timesheet\Controller\User\WorkDays' => function (ControllerManager $cm) {
+                'T4webTimesheet\Controller\User\WorkDays' => function (ControllerManager $cm) {
                     return new WorkDaysController();
                 },
             ),

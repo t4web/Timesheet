@@ -1,10 +1,10 @@
 <?php
 
-namespace Timesheet\Controller\User;
+namespace T4webTimesheet\Controller\User;
 
 use DateTime;
 use Zend\Mvc\Controller\AbstractActionController;
-use Timesheet\Controller\ViewModel\WorkDaysViewModel;
+use T4webTimesheet\Controller\ViewModel\WorkDaysViewModel;
 
 class WorkDaysController extends AbstractActionController {
 

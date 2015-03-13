@@ -1,5 +1,5 @@
 <?php
-namespace Timesheet\Controller\ViewModel;
+namespace T4webTimesheet\Controller\ViewModel;
 
 use DateTime;
 use DateInterval;

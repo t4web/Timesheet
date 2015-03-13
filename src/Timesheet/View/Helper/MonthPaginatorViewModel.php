@@ -1,5 +1,5 @@
 <?php
-namespace Timesheet\View\Helper;
+namespace T4webTimesheet\View\Helper;
 
 use DateTime;
 use DateInterval;
