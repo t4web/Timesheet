@@ -10,7 +10,7 @@ class MonthPaginatorViewModel extends ViewModel {
     public function __construct($variables = null, $options = null) {
         parent::__construct($variables, $options);
 
-        $this->template = "timesheet/helper/month-paginator";
+        $this->template = "t4web-timesheet/helper/month-paginator";
     }
 
     /**
